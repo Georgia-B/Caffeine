@@ -1,0 +1,32 @@
+.milk__input {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #f1e5cc;
+    -webkit-appearance: none;
+    margin: 10px;
+    font-size: 14px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.milk__input > input {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+.milk__input:hover {
+    background-image: linear-gradient(#f1e5cc, #ecddbd, #e9d7b1);
+}
+
+.milk__input--selected {
+    background-color: #ffdb8a;
+}
+
+.milk__input--selected:hover {
+    background-image: linear-gradient(#ffdb8a, #f5d281, #f1d080);
+}

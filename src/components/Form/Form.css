@@ -1,0 +1,23 @@
+.order__form {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.order__button {
+    padding: 10px 15px;
+    margin-top: 15px;
+    background-color: #ffce62;
+    border-style: none;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    min-width: 120px;
+    cursor: pointer;
+}
+    
+.order__button:hover {
+    background-image: linear-gradient(#ffce62,#f3c258,#e7b750);
+}

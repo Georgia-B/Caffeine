@@ -1,13 +1,8 @@
-.order__form {
-    display: block;
-    text-align: center;
-    width: 90%;
-    margin: auto;
-}
-
-.order__button {
+.linkbutton {
+    position: fixed;
+    top: 20px;
+    right: 20;
     padding: 10px 15px;
-    margin-top: 15px;
     background-color: #ffce62;
     border-style: none;
     border: 0;
@@ -19,6 +14,6 @@
     outline: none;
 }
     
-.order__button:hover {
+.linkbutton:hover {
     background-image: linear-gradient(#ffce62,#f3c258,#e7b750);
 }

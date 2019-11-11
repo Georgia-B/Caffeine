@@ -51,7 +51,7 @@ class Form extends Component {
         const order = this.state;
 
         if (order.size && order.type && order.milk) {
-            this.props.placeOrder(order);
+            this.props.placeOrder({ ...order, status: 'Brewing' });
             this.setState({
                 type: null,
                 milk: null,

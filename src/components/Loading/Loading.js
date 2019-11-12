@@ -1,15 +1,11 @@
 import React from 'react';
+import loading from '../../res/loading.png';
 import './Loading.css';
 
 const Loading = () => {
     return (
         <div className="loading">
-            <div className="loading__spinner">
-                <div className="loading__spinner__item"></div>
-                <div className="loading__spinner__item"></div>
-                <div className="loading__spinner__item"></div>
-                <div className="loading__spinner__item"></div>
-            </div>
+            <img src={loading} alt="Loading" width="100" className="loading__image" />
         </div>
     );
 };

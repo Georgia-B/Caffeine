@@ -10,25 +10,12 @@
     flex: 2;
 }
 
-.orderlist__item {
-    border-bottom: 1px solid #cecece;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.orderlist__item:last-child {
-    border-bottom: none;
-}
-
-.orderlist__item__title {
-    flex: 2;
-}
-
 .orderlist__header {
     border-bottom: 1px solid #cecece;
+    background-color: #ffeaba;
     padding: 15px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
 }
 
 .orderlist--empty {

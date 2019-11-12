@@ -1,0 +1,37 @@
+.orderlistitem {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    border-bottom: 1px solid #cecece;
+    padding: 15px;
+    align-items: center;
+}
+
+.orderlistitem:last-child {
+    border-bottom: none;
+}
+
+.orderlistitem__title {
+    flex: 2;
+}
+
+.orderlistitem__action {
+    flex: 1;
+    text-align: right;
+}
+
+.orderlistitem__action__button {
+    padding: 5px 5px;
+    background-color: #ffce62;
+    border-style: none;
+    border: 0;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    min-width: 80px;
+    cursor: pointer;
+    outline: none;
+}
+
+.orderlistitem__action__button:hover {
+    background-image: linear-gradient(#ffce62,#f3c258,#e7b750);
+}

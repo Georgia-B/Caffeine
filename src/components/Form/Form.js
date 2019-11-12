@@ -1,41 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import uuidv4 from 'uuid/v4';
+
 import SizeRadio from '../SizeRadio/SizeRadio';
 import TypeRadio from '../TypeRadio/TypeRadio';
 import MilkRadio from '../MilkRadio/MilkRadio';
 import InputGroup from '../InputGroup/InputGroup';
+
+import { milkTypes, coffeeTypes, sizeTypes } from '../../constants';
 import './Form.css';
-
-const coffeeSizes = [
-    { size: 'small', imgHeight: 30 },
-    { size: 'medium', imgHeight: 40 },
-    { size: 'large', imgHeight: 50 },
-];
-
-const coffeeTypes = [
-    { value: 'cappuccino', name: 'Cappuccino' },
-    { value: 'flatwhite', name: 'Flat White' },
-    { value: 'latte', name: 'Latte' },
-    { value: 'longblack', name: 'Long Black' },
-    { value: 'shortblack', name: 'Short Black' },
-    { value: 'americano', name: 'Americano' },
-];
-
-const milkTypes = [
-    { value: 'almond', name: 'Almond' },
-    { value: 'coconut', name: 'Coconut' },
-    { value: 'soy', name: 'Soy' },
-    { value: 'regular', name: 'Regular' },
-    { value: 'skim', name: 'Skim' },
-];
 
 class Form extends Component {
     constructor() {
         super();
         this.state = {
-            size: 'medium',
+            size: 'Medium',
             type: null,
-            milk: 'soy',
+            milk: null,
         };
         this.onSelect = this.onSelect.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -51,7 +32,7 @@ class Form extends Component {
         const order = this.state;
 
         if (order.size && order.type && order.milk) {
-            this.props.placeOrder({ ...order, status: 'Brewing' });
+            this.props.placeOrder({ ...order, status: 'Brewing', id: uuidv4() });
             this.setState({
                 type: null,
                 milk: null,
@@ -68,7 +49,7 @@ class Form extends Component {
         return (
             <form className="order__form">
                 <InputGroup>
-                    {coffeeSizes.map((coffeeSize) => {
+                    {sizeTypes.map((coffeeSize) => {
                         return <SizeRadio
                             key={coffeeSize.size}
                             size={coffeeSize.size}
@@ -81,9 +62,9 @@ class Form extends Component {
                     {coffeeTypes.map((coffeeType) => {
                         return <TypeRadio
                             key={coffeeType.value}
-                            value={coffeeType.value}
+                            value={coffeeType.name}
                             name={coffeeType.name}
-                            isSelected={type === coffeeType.value}
+                            isSelected={type === coffeeType.name}
                             onSelect={this.onSelect} />;
                     })}
                 </InputGroup>
@@ -91,9 +72,9 @@ class Form extends Component {
                     {milkTypes.map((milkType) => {
                         return <MilkRadio
                             key={milkType.value}
-                            value={milkType.value}
+                            value={milkType.name}
                             name={milkType.name}
-                            isSelected={milk === milkType.value}
+                            isSelected={milk === milkType.name}
                             onSelect={this.onSelect}
                         />;
                     })}

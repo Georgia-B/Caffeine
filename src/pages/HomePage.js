@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import LinkButton from '../components/LinkButton/LinkButton';
+import Header from '../components/Header/Header';
 import OrderList from '../components/OrderList/OrderList';
+import Loading from '../components/Loading/Loading';
 import { coffeeSelectors } from '../redux';
 
-class HomePage extends Component {
-    constructor() {
-        super();
-    }
+const HomePage = (props) => {
+    const { orders } = props;
 
-    render() {
-        const { orders } = this.props;
-
-        return <div>
-            <h1 className="title">Caffeine</h1>
-            <LinkButton to="/order" label="New order" />
+    return <React.Fragment>
+        <Header title="Caffeine" action={{ to: '/order', label: 'New order' }} />
+        {orders === null ?
+            <Loading />
+            :
             <OrderList orders={orders} />
-        </div>;
-    }
-}
+        }
+    </React.Fragment>;
+};
 
 HomePage.propTypes = {
     orders: PropTypes.array,

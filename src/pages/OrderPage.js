@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { coffeeOperations } from '../redux';
 import Form from '../components/Form/Form';
+import Header from '../components/Header/Header';
 
 class OrderPage extends Component {
     constructor() {
@@ -16,10 +17,10 @@ class OrderPage extends Component {
     }
 
     render() {
-        return <div>
-            <h1 className="title">Caffeine</h1>
+        return <React.Fragment>
+            <Header title="Caffeine" action={{ to: '/', label: 'Order status' }} />
             <Form placeOrder={this.placeOrder} />
-        </div>;
+        </React.Fragment>;
     }
 }
 

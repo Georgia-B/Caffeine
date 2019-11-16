@@ -6,9 +6,10 @@ import SizeRadio from '../SizeRadio/SizeRadio';
 import TypeRadio from '../TypeRadio/TypeRadio';
 import MilkRadio from '../MilkRadio/MilkRadio';
 import InputGroup from '../InputGroup/InputGroup';
+import Button from '../Button/Button';
 
 import { milkTypes, coffeeTypes, sizeTypes } from '../../constants';
-import './Form.css';
+import styles from './Form.module.css';
 
 class Form extends Component {
     constructor() {
@@ -47,7 +48,7 @@ class Form extends Component {
         const { size, type, milk } = this.state;
 
         return (
-            <form className="order__form">
+            <form className={styles.form}>
                 <InputGroup>
                     {sizeTypes.map((coffeeSize) => {
                         return <SizeRadio
@@ -79,7 +80,7 @@ class Form extends Component {
                         />;
                     })}
                 </InputGroup>
-                <button type="submit" className="order__button" onClick={this.onSubmit}>Place order</button>
+                <Button text="Place order" type="submit" onClick={this.onSubmit} />
             </form>
         );
     }

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './TypeRadio.css';
+import styles from './TypeRadio.module.css';
 
 const TypeRadio = ({ value, name, isSelected, onSelect }) => {
-    const className = isSelected ? 'type__input type__input--selected' : 'type__input';
+    const className = isSelected ? `${styles.inputwrapper} ${styles.selected}` : styles.inputwrapper;
 
     return (
         <label className={className}>

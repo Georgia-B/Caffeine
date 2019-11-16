@@ -1,4 +1,4 @@
-.orderlistitem {
+.container {
     display: grid;
     grid-template-columns: 60% 20% 20%;
     border-bottom: 1px solid #cecece;
@@ -6,20 +6,20 @@
     align-items: center;
 }
 
-.orderlistitem:last-child {
+.container:last-child {
     border-bottom: none;
 }
 
-.orderlistitem__title {
+.title {
     flex: 2;
 }
 
-.orderlistitem__action {
+.actioncontainer {
     flex: 1;
     text-align: right;
 }
 
-.orderlistitem__action__button {
+.action {
     padding: 5px 5px;
     background-color: #ffce62;
     border-style: none;
@@ -32,6 +32,6 @@
     outline: none;
 }
 
-.orderlistitem__action__button:hover {
+.button:hover {
     background-image: linear-gradient(#ffce62,#f3c258,#e7b750);
 }

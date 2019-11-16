@@ -1,4 +1,4 @@
-.orderlist {
+.container {
     width: 80%;
     margin: 20px auto;
     padding: 0;
@@ -6,11 +6,11 @@
     border-radius: 5px;
 }
 
-.orderlist__title {
+.title {
     flex: 2;
 }
 
-.orderlist__header {
+.header {
     border-bottom: 1px solid #cecece;
     background-color: #ffeaba;
     padding: 15px;
@@ -18,7 +18,7 @@
     grid-template-columns: 60% 20% 20%;
 }
 
-.orderlist--empty {
+.empty {
     margin: auto;
     text-align: center;
     padding: 30px 0;

@@ -1,5 +1,6 @@
-.linkbutton {
+.button {
     padding: 10px 15px;
+    margin-top: 15px;
     background-color: #ffce62;
     border-style: none;
     border: 0;
@@ -11,6 +12,6 @@
     outline: none;
 }
     
-.linkbutton:hover {
+.button:hover {
     background-image: linear-gradient(#ffce62,#f3c258,#e7b750);
 }

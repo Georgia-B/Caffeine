@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './InputGroup.css';
+import styles from './InputGroup.module.css';
 
 const InputGroup = ({ children }) => {
     return (
-        <div className="input__group">
+        <div className={styles.inputgroup}>
             {children}
         </div>
     );

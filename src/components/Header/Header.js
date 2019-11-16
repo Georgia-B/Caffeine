@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinkButton from '../LinkButton/LinkButton';
-import './Header.css';
+import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
+import styles from './Header.module.css';
 
 const Header = ({ title, action }) => {
     return (
-        <div className="header">
-            {action && <div className="header__spacer"></div>}
-            <h1 className="header__title">{title}</h1>
+        <div className={styles.header}>
+            {action && <div className={styles.spacer}></div>}
+            <h1 className={styles.title}>{title}</h1>
             {action &&
-                <div className="header__action">
-                    <LinkButton to={action.to} label={action.label} />
+                <div className={styles.action}>
+                    <Link to={action.to}>
+                        <Button text={action.label} />
+                    </Link>
                 </div>
             }
         </div>

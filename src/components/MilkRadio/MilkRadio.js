@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './MilkRadio.css';
+import styles from './MilkRadio.module.css';
 
 const MilkRadio = ({ value, name, isSelected, onSelect }) => {
-    const className = isSelected ? 'milk__input milk__input--selected' : 'milk__input';
+    const className = isSelected ? `${styles.inputwrapper} ${styles.selected}` : styles.inputwrapper;
 
     return (
         <label className={className}>

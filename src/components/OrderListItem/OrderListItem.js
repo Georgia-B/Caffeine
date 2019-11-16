@@ -3,30 +3,25 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { coffeeOperations } from '../../redux';
-import './OrderListItem.css';
+import styles from './OrderListItem.module.css';
 
 const OrderListItem = ({ order, updateStatus, clearOrder }) => {
+    const actionButton = order.status === 'Brewing' ?
+        <button className={styles.action} onClick={() => updateStatus({ id: order.id, status: 'Ready' })}>
+            Order ready
+        </button>
+        :
+        <button className={styles.action} onClick={() => clearOrder(order.id)}>
+            Clear
+        </button>;
+
     return (
-        <li className="orderlistitem">
-            <span className="orderlistitem__title">{order.size} {order.milk} {order.type}</span>
+        <li className={styles.container}>
+            <span className={styles.title}>{order.size} {order.milk} {order.type}</span>
             <span>{order.status}</span>
-            {order.status === 'Brewing' ?
-                <span className="orderlistitem__action">
-                    <button
-                        className="orderlistitem__action__button"
-                        onClick={() => updateStatus({ id: order.id, status: 'Ready' })}>
-                        Order ready
-                    </button>
-                </span>
-                :
-                <span className="orderlistitem__action">
-                    <button
-                        className="orderlistitem__action__button"
-                        onClick={() => clearOrder(order.id)}>
-                        Clear
-                    </button>
-                </span>
-            }
+            <span className={styles.actioncontainer}>
+                {actionButton}
+            </span>
         </li>
     );
 };

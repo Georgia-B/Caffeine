@@ -1,31 +1,32 @@
-.size__input {
-    width: 80px;
-    height: 90px;
+.inputwrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
     cursor: pointer;
     background-color: #f1e5cc;
-    border-radius: 5px;
     -webkit-appearance: none;
-    margin: 5px 10px;
+    margin: 10px;
+    font-size: 14px;
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.size__input > input {
+.inputwrapper > input {
     opacity: 0;
     width: 0;
     margin: 0;
 }
 
-.size__input:hover {
+.inputwrapper:hover {
     background-image: linear-gradient(#f1e5cc, #ecddbd, #e9d7b1);
 }
 
-.size__input--selected {
+.selected {
     background-color: #ffdb8a;
 }
 
-.size__input--selected:hover {
+.selected:hover {
     background-image: linear-gradient(#ffdb8a, #f5d281, #f1d080);
 }

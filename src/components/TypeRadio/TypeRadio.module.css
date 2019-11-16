@@ -1,4 +1,4 @@
-.type__input {
+.inputwrapper {
     width: 100px;
     height: 50px;
     cursor: pointer;
@@ -12,20 +12,20 @@
     justify-content: center;
 }
 
-.type__input > input {
+.inputwrapper > input {
     opacity: 0;
     width: 0;
     margin: 0;
 }
 
-.type__input:hover {
+.inputwrapper:hover {
     background-image: linear-gradient(#f1e5cc, #ecddbd, #e9d7b1);
 }
 
-.type__input--selected {
+.selected {
     background-color: #ffdb8a;
 }
 
-.type__input--selected:hover {
+.selected:hover {
     background-image: linear-gradient(#ffdb8a, #f5d281, #f1d080);
 }

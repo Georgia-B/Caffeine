@@ -30,7 +30,29 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader'],
+                oneOf: [
+                    {
+                        test: /\.module\.css$/,
+                        use: [
+                            MiniCssExtractPlugin.loader,
+                            {
+                                loader: 'css-loader',
+                                options: { modules: true, onlyLocals: false },
+                            },
+                        ],
+                    },
+                    {
+                        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                    },
+                ],
+                /*use: ['style-loader', MiniCssExtractPlugin.loader, {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        onlyLocals: false,
+                    },
+                }],*/
+
             },
             {
                 test: /\.(png|svg|jpg|gif|jpeg)$/,

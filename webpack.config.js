@@ -45,14 +45,6 @@ module.exports = {
                         use: [MiniCssExtractPlugin.loader, 'css-loader'],
                     },
                 ],
-                /*use: ['style-loader', MiniCssExtractPlugin.loader, {
-                    loader: 'css-loader',
-                    options: {
-                        modules: true,
-                        onlyLocals: false,
-                    },
-                }],*/
-
             },
             {
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
@@ -66,6 +58,7 @@ module.exports = {
         contentBase: path.join(__dirname, './dist'),
         compress: true,
         port: 3000,
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({

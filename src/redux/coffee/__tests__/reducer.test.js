@@ -1,4 +1,5 @@
 import { coffeeReducer, coffeeTypes, coffeeInitialState } from '../../coffee';
+import { styleTypes, statusTypes, sizeTypes } from '../../../constants';
 
 describe('coffeeReducer', () => {
     it('should return the initial state', () => {
@@ -7,8 +8,8 @@ describe('coffeeReducer', () => {
 
     it('should handle ADD_ORDER', () => {
         const payload = {
-            type: 'Latte',
-            size: 'Large',
+            style: styleTypes.cappuccino,
+            size: sizeTypes.small,
         };
 
         expect(coffeeReducer({ orders: [] }, {
@@ -23,7 +24,7 @@ describe('coffeeReducer', () => {
         const initialState = {
             orders: [{
                 id: '123',
-                type: 'Latte',
+                style: styleTypes.cappuccino,
             }],
         };
 
@@ -39,14 +40,14 @@ describe('coffeeReducer', () => {
         const initialState = {
             orders: [{
                 id: '123',
-                type: 'Lattte',
-                status: 'Brewing',
+                style: styleTypes.cappuccino,
+                status: statusTypes.brewing,
             }],
         };
 
         const payload = {
             id: '123',
-            status: 'Ready',
+            status: statusTypes.ready,
         };
 
         expect(coffeeReducer(initialState, {
@@ -55,8 +56,8 @@ describe('coffeeReducer', () => {
         })).toEqual({
             orders: [{
                 id: '123',
-                type: 'Lattte',
-                status: 'Ready',
+                style: styleTypes.cappuccino,
+                status: statusTypes.ready,
             }],
         });
     });

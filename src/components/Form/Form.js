@@ -6,7 +6,7 @@ import InputGroup from '../InputGroup/InputGroup';
 import Radio from '../Radio/Radio';
 import Button from '../Button/Button';
 
-import { milkTypes, coffeeTypes, sizeTypes } from '../../constants';
+import { milkTypes, styleTypes, sizeTypes, statusTypes } from '../../constants';
 import coffee from '../../res/coffee.png';
 import styles from './Form.module.css';
 
@@ -14,8 +14,8 @@ class Form extends Component {
     constructor() {
         super();
         this.state = {
-            size: 'Medium',
-            type: null,
+            size: sizeTypes.small.value,
+            style: null,
             milk: null,
         };
         this.onSelect = this.onSelect.bind(this);
@@ -31,10 +31,15 @@ class Form extends Component {
     onSubmit(event) {
         const order = this.state;
 
-        if (order.size && order.type && order.milk) {
-            this.props.placeOrder({ ...order, status: 'Brewing', id: uuidv4() });
+        if (order.size && order.style && order.milk) {
+            this.props.placeOrder({
+                ...order,
+                status: statusTypes.brewing,
+                id: uuidv4(),
+            });
+
             this.setState({
-                type: null,
+                style: null,
                 milk: null,
                 size: null,
             });
@@ -44,47 +49,44 @@ class Form extends Component {
     }
 
     render() {
-        const { size, type, milk } = this.state;
+        const { size, style, milk } = this.state;
 
         return (
             <form className={styles.form}>
                 <InputGroup>
-                    {sizeTypes.map((coffeeSize) => {
+                    {Object.values(sizeTypes).map((sizeType) => {
                         return <Radio
-                            key={coffeeSize.size}
-                            size={coffeeSize.size}
-                            value={coffeeSize.size}
+                            key={sizeType.id}
+                            value={sizeType.value}
                             image={{
                                 src: coffee,
-                                alt: coffeeSize.size,
-                                height: coffeeSize.imgHeight,
-                            }
-                            }
-                            isSelected={size === coffeeSize.size}
+                                alt: sizeType.id,
+                                height: sizeType.imgHeight,
+                            }}
+                            isSelected={size === sizeType.value}
                             onSelect={this.onSelect}
                             type="size"
                         />;
                     })}
                 </InputGroup>
                 <InputGroup>
-                    {coffeeTypes.map((coffeeType) => {
+                    {Object.values(styleTypes).map((styleType) => {
                         return <Radio
-                            key={coffeeType.name}
-                            value={coffeeType.value}
-                            label={coffeeType.value}
-                            isSelected={type === coffeeType.value}
+                            key={styleType}
+                            value={styleType}
+                            isSelected={style === styleType}
                             onSelect={this.onSelect}
-                            type="type" />;
+                            type="style" />;
                     })}
                 </InputGroup>
                 <InputGroup>
-                    {milkTypes.map((milkType) => {
+                    {Object.values(milkTypes).map((milkType) => {
                         return <Radio
-                            key={milkType.name}
-                            value={milkType.value}
-                            isSelected={milk === milkType.value}
+                            key={milkType}
+                            value={milkType}
+                            isSelected={milk === milkType}
                             onSelect={this.onSelect}
-                            label={milkType.value}
+                            label={milkType}
                             type="milk"
                         />;
                     })}

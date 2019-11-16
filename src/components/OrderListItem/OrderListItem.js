@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { coffeeOperations } from '../../redux';
+import { statusTypes } from '../../constants';
 import styles from './OrderListItem.module.css';
 
 const OrderListItem = ({ order, updateStatus, clearOrder }) => {
-    const actionButton = order.status === 'Brewing' ?
-        <button className={styles.action} onClick={() => updateStatus({ id: order.id, status: 'Ready' })}>
+    const actionButton = order.status === statusTypes.brewing ?
+        <button className={styles.action} onClick={() => updateStatus({ id: order.id, status: statusTypes.ready })}>
             Order ready
         </button>
         :

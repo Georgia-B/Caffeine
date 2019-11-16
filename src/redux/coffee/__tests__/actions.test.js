@@ -1,11 +1,12 @@
+import { styleTypes, statusTypes, sizeTypes } from '../../../constants';
 import actions from '../actions';
 import types from '../types';
 
 describe('coffeeActions', () => {
     it('should create an action to add an order', () => {
         const order = {
-            type: 'Cappuccino',
-            size: 'Medium',
+            style: styleTypes.cappuccino,
+            size: sizeTypes.small.value,
         };
 
         expect(actions.addOrder(order)).toEqual({
@@ -26,7 +27,7 @@ describe('coffeeActions', () => {
     it('should create an action to update an order status', () => {
         const payload = {
             id: '12345',
-            status: 'Ready',
+            status: statusTypes.ready,
         };
 
         expect(actions.updateStatus(payload)).toEqual({

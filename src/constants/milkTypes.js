@@ -1,9 +1,9 @@
 const milkTypes = [
-    { value: 'almond', name: 'Almond' },
-    { value: 'coconut', name: 'Coconut' },
-    { value: 'soy', name: 'Soy' },
-    { value: 'regular', name: 'Regular' },
-    { value: 'skim', name: 'Skim' },
+    { name: 'almond', value: 'Almond' },
+    { name: 'coconut', value: 'Coconut' },
+    { name: 'soy', value: 'Soy' },
+    { name: 'regular', value: 'Regular' },
+    { name: 'skim', value: 'Skim' },
 ];
 
 export default milkTypes;

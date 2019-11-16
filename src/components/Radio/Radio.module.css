@@ -1,12 +1,7 @@
 .inputwrapper {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
     cursor: pointer;
     background-color: #f1e5cc;
     -webkit-appearance: none;
-    margin: 10px;
-    font-size: 14px;
     outline: none;
     display: flex;
     align-items: center;
@@ -24,9 +19,32 @@
 }
 
 .selected {
+    composes: inputwrapper;
     background-color: #ffdb8a;
 }
 
 .selected:hover {
     background-image: linear-gradient(#ffdb8a, #f5d281, #f1d080);
+}
+
+.type {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px; 
+}
+
+.milk {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.size {
+    width: 80px;
+    height: 90px;
+    margin: 5px 10px;
+    border-radius: 5px;
 }

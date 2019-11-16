@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
 
-import SizeRadio from '../SizeRadio/SizeRadio';
-import TypeRadio from '../TypeRadio/TypeRadio';
-import MilkRadio from '../MilkRadio/MilkRadio';
 import InputGroup from '../InputGroup/InputGroup';
+import Radio from '../Radio/Radio';
 import Button from '../Button/Button';
 
 import { milkTypes, coffeeTypes, sizeTypes } from '../../constants';
+import coffee from '../../res/coffee.png';
 import styles from './Form.module.css';
 
 class Form extends Component {
@@ -51,32 +50,42 @@ class Form extends Component {
             <form className={styles.form}>
                 <InputGroup>
                     {sizeTypes.map((coffeeSize) => {
-                        return <SizeRadio
+                        return <Radio
                             key={coffeeSize.size}
                             size={coffeeSize.size}
-                            imgHeight={coffeeSize.imgHeight}
+                            value={coffeeSize.size}
+                            image={{
+                                src: coffee,
+                                alt: coffeeSize.size,
+                                height: coffeeSize.imgHeight,
+                            }
+                            }
                             isSelected={size === coffeeSize.size}
-                            onSelect={this.onSelect} />;
+                            onSelect={this.onSelect}
+                            type="size"
+                        />;
                     })}
                 </InputGroup>
                 <InputGroup>
                     {coffeeTypes.map((coffeeType) => {
-                        return <TypeRadio
-                            key={coffeeType.value}
-                            value={coffeeType.name}
-                            name={coffeeType.name}
-                            isSelected={type === coffeeType.name}
-                            onSelect={this.onSelect} />;
+                        return <Radio
+                            key={coffeeType.name}
+                            value={coffeeType.value}
+                            label={coffeeType.value}
+                            isSelected={type === coffeeType.value}
+                            onSelect={this.onSelect}
+                            type="type" />;
                     })}
                 </InputGroup>
                 <InputGroup>
                     {milkTypes.map((milkType) => {
-                        return <MilkRadio
-                            key={milkType.value}
-                            value={milkType.name}
-                            name={milkType.name}
-                            isSelected={milk === milkType.name}
+                        return <Radio
+                            key={milkType.name}
+                            value={milkType.value}
+                            isSelected={milk === milkType.value}
                             onSelect={this.onSelect}
+                            label={milkType.value}
+                            type="milk"
                         />;
                     })}
                 </InputGroup>

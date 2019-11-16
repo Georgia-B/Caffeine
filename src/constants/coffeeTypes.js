@@ -1,10 +1,10 @@
 const coffeeTypes = [
-    { value: 'cappuccino', name: 'Cappuccino' },
-    { value: 'flatwhite', name: 'Flat White' },
-    { value: 'latte', name: 'Latte' },
-    { value: 'longblack', name: 'Long Black' },
-    { value: 'shortblack', name: 'Short Black' },
-    { value: 'americano', name: 'Americano' },
+    { name: 'cappuccino', value: 'Cappuccino' },
+    { name: 'flatwhite', value: 'Flat White' },
+    { name: 'latte', value: 'Latte' },
+    { name: 'longblack', value: 'Long Black' },
+    { name: 'shortblack', value: 'Short Black' },
+    { name: 'americano', value: 'Americano' },
 ];
 
 export default coffeeTypes;

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | <Radio /> should render correctly when selected 1`] = `
+<DocumentFragment>
+  <label
+    class="selected test"
+  >
+    <span>
+      Hello
+    </span>
+    <input
+      name="test"
+      type="radio"
+      value="Hello"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`Components | <Radio /> should render correctly with image 1`] = `
+<DocumentFragment>
+  <label
+    class="inputwrapper test"
+  >
+    <img
+      alt="helloimage"
+      height="30"
+      src="/image.png"
+    />
+    <input
+      name="test"
+      type="radio"
+      value="Hello"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`Components | <Radio /> should render correctly with text 1`] = `
+<DocumentFragment>
+  <label
+    class="inputwrapper test"
+  >
+    <span>
+      Hello
+    </span>
+    <input
+      name="test"
+      type="radio"
+      value="Hello"
+    />
+  </label>
+</DocumentFragment>
+`;

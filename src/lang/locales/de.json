@@ -1,0 +1,47 @@
+{
+    "de-DE": {
+        "header": {
+            "title": "Koffein",
+            "orderButton": "Neue Ordnung",
+            "statusButton": "Bestellstatus"
+        },
+        "orderlist": {
+            "header": {
+                "order": "Bestellung",
+                "status": "die Stellung"
+            },
+            "empty": "Keine Bestellungen",
+            "item": {
+                "actionready": "Bestellung fertig",
+                "actionclear": "Beseitigen"
+            }
+        },
+        "form": {
+            "submit": "Bestellen"
+        },
+        "style": {
+            "cappuccino": "Cappuccino",
+            "flatwhite": "Flaches weiß",
+            "latte": "Latte",
+            "longblack": "Lang schwarz",
+            "shortblack": "Kurzes schwarz",
+            "americano": "Americano"
+        },
+        "milk": {
+            "almond": "Mandel",
+            "coconut": "Kokosnuss",
+            "soy": "Soja",
+            "regular": "Regulär",
+            "skim": "Abschöpfen"
+        },
+        "size": {
+            "small": "Klein",
+            "medium": "Mittel",
+            "large": "Groß"
+        },
+        "status": {
+            "brewing": "Herstellung",
+            "ready": "Bereit"
+        }
+    }
+}

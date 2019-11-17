@@ -7,13 +7,9 @@ Goodies used in this project:
  - CSS Modules
  - Redux Ducks pattern
  - React router
+ - I18next (supports English, Spanish and German)
  - Jest
  - ESlint
  - Webpack 4
-
-Future enhancements:
-  - React Intl
-  - Redux saga with async actions
-  - Reselect
 
 

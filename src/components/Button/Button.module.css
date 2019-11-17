@@ -1,6 +1,5 @@
 .button {
     padding: 10px 15px;
-    margin-top: 15px;
     background-color: #ffce62;
     border-style: none;
     border: 0;
@@ -14,4 +13,8 @@
     
 .button:hover {
     background-image: linear-gradient(#ffce62,#f3c258,#e7b750);
+}
+
+.button:focus {
+    box-shadow: 0 0 4px #594003;
 }

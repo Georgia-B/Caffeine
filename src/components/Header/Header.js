@@ -11,7 +11,7 @@ const Header = ({ title, action }) => {
             <h1 className={styles.title}>{title}</h1>
             {action &&
                 <div className={styles.action}>
-                    <Link to={action.to}>
+                    <Link to={action.to} className={styles.link}>
                         <Button text={action.label} />
                     </Link>
                 </div>

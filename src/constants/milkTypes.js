@@ -1,9 +1,9 @@
 const milkTypes = {
-    almond: 'Almond',
-    coconut: 'Coconut',
-    soy: 'Soy',
-    regular: 'Regular',
-    skim: 'Skim',
+    almond: 'milk.almond',
+    coconut: 'milk.coconut',
+    soy: 'milk.soy',
+    regular: 'milk.regular',
+    skim: 'milk.skim',
 };
 
 export default milkTypes;

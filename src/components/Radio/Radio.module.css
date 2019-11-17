@@ -12,10 +12,15 @@
     opacity: 0;
     width: 0;
     margin: 0;
+    padding: 0;
 }
 
 .inputwrapper:hover {
     background-image: linear-gradient(#f1e5cc, #ecddbd, #e9d7b1);
+}
+
+.inputwrapper:focus-within {
+    box-shadow: 0 0 4px #91732a;
 }
 
 .selected {
@@ -23,7 +28,8 @@
     background-color: #ffdb8a;
 }
 
-.selected:hover {
+.selected:hover,
+.selected:focus {
     background-image: linear-gradient(#ffdb8a, #f5d281, #f1d080);
 }
 

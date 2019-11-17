@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
+import { withTranslation } from 'react-i18next';
 
 import InputGroup from '../InputGroup/InputGroup';
 import Radio from '../Radio/Radio';
@@ -50,6 +51,7 @@ class Form extends Component {
 
     render() {
         const { size, style, milk } = this.state;
+        const { t } = this.props;
 
         return (
             <form className={styles.form}>
@@ -86,12 +88,11 @@ class Form extends Component {
                             value={milkType}
                             isSelected={milk === milkType}
                             onSelect={this.onSelect}
-                            label={milkType}
                             type="milk"
                         />;
                     })}
                 </InputGroup>
-                <Button text="Place order" type="submit" onClick={this.onSubmit} />
+                <Button text={t('form.submit')} type="submit" onClick={this.onSubmit} />
             </form>
         );
     }
@@ -99,6 +100,7 @@ class Form extends Component {
 
 Form.propTypes = {
     placeOrder: PropTypes.func,
+    t: PropTypes.func,
 };
 
-export default Form;
+export default withTranslation()(Form);

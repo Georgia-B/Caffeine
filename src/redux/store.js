@@ -5,7 +5,7 @@ import initialState from './initialState';
 export const createReduxStore = () => {
     const enhancer = (window && window.__REDUX_DEVTOOLS_EXTENSION__)
         ? compose(window.__REDUX_DEVTOOLS_EXTENSION__())
-        : null;
+        : undefined;
 
     const store = createStore(rootReducer, initialState, enhancer);
 

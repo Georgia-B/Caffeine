@@ -1,6 +1,6 @@
 const statusTypes = {
-    brewing: 'Brewing',
-    ready: 'Ready',
+    brewing: 'status.brewing',
+    ready: 'status.ready',
 };
 
 export default statusTypes;
